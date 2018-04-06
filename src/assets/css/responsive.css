@@ -1,0 +1,55 @@
+/* Medium Layout: 1280px. */
+@media only screen and (min-width: 992px) and (max-width: 1200px) { 
+  
+    
+}
+/* Tablet Layout: 768px. */
+@media only screen and (min-width: 768px) and (max-width: 991px) { 
+
+ .address h4 {
+	font-size:18px;
+	margin:40px 0 0 0;
+}
+.address h3 {
+	font-size:24px;
+	margin:10px 0 40px 0;
+}
+.address h3 .fa-2x {
+	font-size:30px;
+}
+    
+}
+/* Mobile Layout: 320px. */
+@media only screen and (max-width: 767px) { 
+header .intro-text form input[type="text"]{ width:100%;}
+header .intro-text form input[type="submit"]{ width:100%;margin:0px 2px;}
+ .address h4 {
+	font-size:18px;
+	margin:40px 0 0 0;
+}
+.address h3 {
+	font-size:24px;
+	margin:10px 0 40px 0;
+}
+.address h3 .fa-2x {
+	font-size:30px;
+}
+    
+}
+/* Wide Mobile Layout: 480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) { 
+header .intro-text form input[type="text"]{ width:100%;}
+header .intro-text form input[type="submit"]{ width:100%;margin:0px 2px;}
+.address h4 {
+	font-size:18px;
+	margin:40px 0 0 0;
+}
+.address h3 {
+	font-size:24px;
+	margin:10px 0 40px 0;
+}
+.address h3 .fa-2x {
+	font-size:30px;
+}
+
+}

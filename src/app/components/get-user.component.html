@@ -1,0 +1,57 @@
+<section id="counter" class="counter-padding" style="margin-top:120px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 nopadding-left nopadding-right">
+                <div class="counter-txt-back">
+                    <div class="counter-txt">
+                        <h1 class="text-center" style="color:white; font-size:90px">{{currentTime | date:'hh:mm:ss a'}}</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section *ngIf="user" id="about" class="section-padding" style="margin-top:50px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div class="about-img-cont">
+                    <img class="wimg" [src]="user.image">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div class="about-text-cont">
+                    <h1><span>Información del pasajero</span></h1>
+                    <br>
+                    <hr>
+                    <br>
+                    <h2>Nombres:<span>&nbsp;&nbsp; {{user.name}}</span> </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section *ngIf="!user" id="about" class="section-padding" style="margin-top:50px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="about-img-cont">
+                    <img class="text-center" src="assets/images/front_alterno.jpeg">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<br>
+<section id="about" class="section-padding" style="width:100%; height:750px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="about-img-cont text-center">
+                    <img src="assets/images/certicom.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
