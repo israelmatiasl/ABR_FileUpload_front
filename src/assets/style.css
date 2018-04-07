@@ -76,7 +76,7 @@ img {
 }
 
 .section-padding {
-    padding: 100px 0 70px 0;
+    padding: 30px 0 70px 0;
     overflow: hidden;
 }
 
@@ -336,6 +336,11 @@ h6 {}
     background-color: #003360;
     overflow: hidden;
     padding: 50px 0px;
+}
+
+.counter-txt-front {
+    overflow: hidden;
+    padding: 10px 0px;
 }
 
 .counter-txt {

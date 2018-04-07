@@ -1,10 +1,10 @@
-<section id="counter" class="counter-padding" style="margin-top:120px;">
+<section id="counter" class="counter-padding" style="margin-top:60px;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12 col-md-12 nopadding-left nopadding-right">
                 <div class="counter-txt-back">
                     <div class="counter-txt">
-                        <h1 class="text-center" style="color:white; font-size:90px">{{currentTime | date:'hh:mm:ss a'}}</h1>
+                        <h1 class="text-center tg" style="color:white; font-size:90px">{{currentTime | date:'hh:mm:ss a'}}</h1>
                     </div>
                 </div>
             </div>
@@ -12,27 +12,44 @@
     </div>
 </section>
 
-<section *ngIf="user" id="about" class="section-padding" style="margin-top:50px">
-    <div class="container">
+<section id="counter" style="margin-top:60px;">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-6 col-md-6">
-                <div class="about-img-cont">
-                    <img class="wimg" [src]="user.image">
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-6">
-                <div class="about-text-cont">
-                    <h1><span>Información del pasajero</span></h1>
-                    <br>
-                    <hr>
-                    <br>
-                    <h2>Nombres:<span>&nbsp;&nbsp; {{user.name}}</span> </h2>
+            <div class="col-lg-12 col-md-12 nopadding-left nopadding-right">
+                <div class="counter-txt-front">
+                    <div class="counter-txt">
+                        <h1 class="text-center tg" style="color:#003360;font-size:90px">control de embarque</h1>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<section *ngIf="!user" id="about" class="section-padding" style="margin-top:50px">
+
+<section *ngIf="user" id="about" class="section-padding" style="margin-top:10px">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                <div class="about-img-cont text-center">
+                    <img class="wimg" [src]="user.image">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 nopadding-left nopadding-right">
+                <h1 class="text-center tg" style="color:#003360;font-size:70px">¡buen viaje!</h1>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-lg-12 col-md-12 nopadding-left nopadding-right">
+                <h1 class="text-center tg" style="color:#003360;font-size:80px">{{user.name.toLowerCase()}}</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section *ngIf="!user" id="about" class="section-padding" style="margin-top:210px">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12">
@@ -44,7 +61,8 @@
     </div>
 </section>
 <br>
-<section id="about" class="section-padding" style="width:100%; height:750px;">
+
+<section id="about" class="section-padding" style="width:100%; height:500px;">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

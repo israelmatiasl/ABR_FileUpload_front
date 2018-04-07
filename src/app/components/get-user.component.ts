@@ -15,6 +15,7 @@ export class GetUserComponent implements OnInit {
   public document:string='';
   public documentToSearch:string = '';
   public created_at: Date = null;
+  public created_atLast:Date = null;
   public user:User;
   public currentTime:Date;
 
@@ -23,7 +24,6 @@ export class GetUserComponent implements OnInit {
   }
 
   ngOnInit() {
-    //this.getTemp();
     this.searchObservable().subscribe();
   }
 
@@ -34,7 +34,6 @@ export class GetUserComponent implements OnInit {
       let intervalo = setInterval(()=>{
         this.currentTime = new Date();
         this.getTemp();
-
       }, TIME_TO_SEARCH);
     });
   }
@@ -53,16 +52,26 @@ export class GetUserComponent implements OnInit {
         this.created_at = new Date(res.created_at);
         let actualDate = new Date();
 
+        // SI EL ÚLTIMO USUARIO FUE LUEGO DE 3 MIN
         if(actualDate.getTime() - this.created_at.getTime() > TIME_TO_LEFT){
           if(this.user){
             this.user = null;
           }
         }
-        else{
-          
-          if(this.document != this.documentToSearch){
+        else {
+          // SI ES OTRO USUARIO
+          if((this.document != this.documentToSearch)){
             this.documentToSearch = this.document;
             this.search(this.documentToSearch);
+            this.created_atLast = this.created_at;
+          }
+          else{
+            //SI ES EL MISMO USUARIO CON OTRA IMAGEN
+            if(this.created_at.getTime() != this.created_atLast.getTime()){
+              this.documentToSearch = this.document;
+              this.search(this.documentToSearch);
+              this.created_atLast = this.created_at;
+            }
           }
         }
       });

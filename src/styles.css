@@ -1,6 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 
+@font-face {
+    font-family: 'SpaceRanger';
+    src: url('assets/fonts/spaceranger.ttf');
+}
+
 .wimg {
     border: 3px solid #ddd;
     border-radius: 4px;
+}
+
+.tg {
+    font-family: 'SpaceRanger';
+    font-feature-settings: inherit;
+    text-transform: capitalize;
 }
