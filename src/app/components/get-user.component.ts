@@ -52,25 +52,27 @@ export class GetUserComponent implements OnInit {
         this.created_at = new Date(res.created_at);
         let actualDate = new Date();
 
-        // SI EL ÚLTIMO USUARIO FUE LUEGO DE 3 MIN
-        if(actualDate.getTime() - this.created_at.getTime() > TIME_TO_LEFT){
-          if(this.user){
-            this.user = null;
+        if(this.document){
+          // SI EL ÚLTIMO USUARIO FUE LUEGO DE 3 MIN
+          if(actualDate.getTime() - this.created_at.getTime() > TIME_TO_LEFT){
+            if(this.user){
+              this.user = null;
+            }
           }
-        }
-        else {
-          // SI ES OTRO USUARIO
-          if((this.document != this.documentToSearch)){
-            this.documentToSearch = this.document;
-            this.search(this.documentToSearch);
-            this.created_atLast = this.created_at;
-          }
-          else{
-            //SI ES EL MISMO USUARIO CON OTRA IMAGEN
-            if(this.created_at.getTime() != this.created_atLast.getTime()){
+          else {
+            // SI ES OTRO USUARIO
+            if((this.document != this.documentToSearch)){
               this.documentToSearch = this.document;
               this.search(this.documentToSearch);
               this.created_atLast = this.created_at;
+            }
+            else{
+              //SI ES EL MISMO USUARIO CON OTRA IMAGEN
+              if(this.created_at.getTime() != this.created_atLast.getTime()){
+                this.documentToSearch = this.document;
+                this.search(this.documentToSearch);
+                this.created_atLast = this.created_at;
+              }
             }
           }
         }
